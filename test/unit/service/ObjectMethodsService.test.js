@@ -17,7 +17,7 @@ describe('ObjectMethodsService Suite Tests', () => {
   });
 
   it("should consider only the object 'age' when coercing it to a number", () => {
-    const rawObject = Object.create(MOCK_OBJECT);
+    const rawObject = { ...MOCK_OBJECT };
 
     const object = service.getEnhancedObject(rawObject);
 
@@ -33,7 +33,7 @@ describe('ObjectMethodsService Suite Tests', () => {
   });
 
   it('should provide a readable description of the object on string coercing', () => {
-    const rawObject = Object.create(MOCK_OBJECT);
+    const rawObject = { ...MOCK_OBJECT };
 
     const object = service.getEnhancedObject2(rawObject);
 
@@ -50,7 +50,7 @@ describe('ObjectMethodsService Suite Tests', () => {
   });
 
   it('should provide a readable description or valid number representation of the object depending on the context', () => {
-    const rawObject = Object.create(MOCK_OBJECT);
+    const rawObject = { ...MOCK_OBJECT };
 
     const object = service.getEnhancedObjectWithoutValueOfOrToString(rawObject);
 
